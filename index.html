@@ -11,9 +11,30 @@
 </head>
 
 <body>
+    
+    <div class="container">
+            <h1>Bookmarks</h1>
+            <h3>Add a New Bookmark</h3>
+            <form id="js-shopping-list-form">
+              <label for="bookmark-title-entry">Title</label>
+                <input type="text" name="bookmark-title-entry" class="js-bookmark-title-entry" placeholder="Title">
+              <label for="bookmark-url-entry">URL</label>
+                <input type="text" name="bookmark-url-entry" class="js-bookmark-url-entry" placeholder="URL">
+              <label for="bookmark-rating-entry">Rating</label>
+                <input type="text" name="bookmark-rating-entry" class="js-bookmark-rating-entry" placeholder="Rating (0-5)">
+                <button type="submit">Add item</button>
+              <div>
+                <input type="checkbox" id="filter-checked" class="filter-checked js-filter-checked" />
+                <label for="filter-checked">Hide Checked</label>
+              </div>
+              <div>
+                <label for="js-bookmarksearch-entry">Search:</label>
+                <input type="text" name="bookmark-search-entry" class="js-bookmark-search-entry" />
+              </div>
+            </form>
+            <ul class="bookmark-list js-bookmark-list">
+            </ul>
+          </div>
 
-    <h1 class="main title">Bookmarks</h1>
-    <h3>Add New Bookmark</h3>
-  
 </body>
 </html>

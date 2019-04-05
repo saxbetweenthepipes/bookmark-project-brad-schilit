@@ -1,40 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bookmarks App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <script src="main.store.js"></script>
-    <script src="main.index.js"></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Bookmarks</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body>
-    
-    <div class="container">
-            <h1>Bookmarks</h1>
-            <h3>Add a New Bookmark</h3>
-            <form id="js-bookmark-list-form">
-              <label for="bookmark-title-entry">Title</label>
-                <input type="text" name="bookmark-title-entry" class="js-bookmark-title-entry" placeholder="Title">
-              <label for="bookmark-url-entry">URL</label>
-                <input type="text" name="bookmark-url-entry" class="js-bookmark-url-entry" placeholder="URL">
-              <label for="bookmark-rating-entry">Rating</label>
-                <input type="text" name="bookmark-rating-entry" class="js-bookmark-rating-entry" placeholder="Rating (0-5)">
-                <button type="submit">Add item</button>
-              <div>
-                <input type="checkbox" id="filter-checked" class="filter-checked js-filter-checked" />
-                <label for="filter-checked">Hide Checked</label>
-              </div>
-              <div>
-                <label for="js-bookmarksearch-entry">Search:</label>
-                <input type="text" name="bookmark-search-entry" class="js-bookmark-search-entry" />
-              </div>
-            </form>
-            <ul class="bookmark-list js-bookmark-list">
-            </ul>
-          </div>
+  <div class="container">
+  <header role="banner">
+    <h1>Bookmarks</h1>
+  </header>
 
+  <main>
+
+    <h3>Add a New Bookmark</h3>
+    <div class="new"></div>
+    
+    <section class="add-item">
+    </section>
+
+    <section class="list-controler js-list-controler">
+      <select class="min-rating js-min-rating">
+        <option value="0">Filter Rating</option>
+        <option value="1">1 Star</option>
+        <option value="2">2 Stars</option>
+        <option value="3">3 Stars</option>
+        <option value="4">4 Stars</option>
+        <option value="5">5 Stars</option>
+      </select>
+    </section>
+  </div>
+
+    <ul class="bookmark-list">
+    </ul>
+
+  </main>
+  </div>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="scripts/api.js"></script>
+    <script type="text/javascript" src="scripts/store.js"></script>
+    <script type="text/javascript" src="scripts/bookmark.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+    
 </body>
+
 </html>

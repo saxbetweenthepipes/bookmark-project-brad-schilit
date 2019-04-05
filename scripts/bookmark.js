@@ -8,7 +8,9 @@
 //function to create my bookmark list
 const bookmarkList = (function () {
   function generateNewBookmarkForm() {
+
     if (store.isAdding === true) {
+
       return `<form class="add-item-form">
        <label for="item-title">Webpage Title:</label>
        <input type="text" name="title" class="item-title">
@@ -27,15 +29,17 @@ const bookmarkList = (function () {
                <button class="resetButton" type="button" role="button">Reset</button>
            </form>`;
     }
+
     else {
       return '<button class="addButton" role="button">Add Bookmark</button>';
     }
+
   }
 
   function generateBookmarkElement(item) {
   // function to create my new bookmark elements.  This will create the appropriate li in my HTML    
     if (item.isExpanded === false){
-      return`
+      return `
         <li class="bookmark-element" data-item-id="${item.id}">
         <h2>${item.title}</h2>
         <h3>${item.rating} Stars</h3>
@@ -138,8 +142,11 @@ const bookmarkList = (function () {
             throw error;
 
           }
+
           return response.json();
+
         })
+
         .then(newItem => {
           $('.item-title').val('');
           $('.item-description').val('');
@@ -170,8 +177,10 @@ const bookmarkList = (function () {
               .then((jsonResponse) => {
                 return jsonResponse.message;
               });
+
             throw error;
           }
+
           store.findAndDelete(id);
           render();
         })
@@ -191,8 +200,10 @@ const bookmarkList = (function () {
     handleExpandBookmark();
     handleFilter();
   }
+
   return {
     render,
     bindEventListeners,
   };
+  
 })();

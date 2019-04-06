@@ -1,28 +1,29 @@
 'use strict';
 
 
-let api = (function () {
-  const BASE_URL = 'https://thinkful-list-api.herokuapp.com/brad';
-  function getItems() {
-    return fetch(`${BASE_URL}/bookmarks`);
-  }
+let api = (function() {
+    const BASE_URL = 'https://thinkful-list-api.herokuapp.com/brad';
 
-  function createItem(obj) {
-    let newItem = JSON.stringify(obj);
-    return fetch(`${BASE_URL}/bookmarks`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: newItem
-    });
-  }
+    function getItems() {
+        return fetch(`${BASE_URL}/bookmarks`);
+    }
 
-  function deleteItem(id) {
-    return fetch(`${BASE_URL}/bookmarks/${id}`, {
-      method: 'DELETE',
-      headers: { 'Content-Type': 'application/json' },
-      body: ''
-    });
-  }
+    function createItem(obj) {
+        let newItem = JSON.stringify(obj);
+        return fetch(`${BASE_URL}/bookmarks`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: newItem
+        });
+    }
 
-  return { createItem, getItems, deleteItem };
+    function deleteItem(id) {
+        return fetch(`${BASE_URL}/bookmarks/${id}`, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: ''
+        });
+    }
+
+    return { createItem, getItems, deleteItem };
 })();
